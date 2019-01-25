@@ -15,7 +15,7 @@ public class CombinedAvroInputFormat extends CombineFileInputFormat<Text, Text> 
         return new CombineFileRecordReader(conf, (CombineFileSplit)split, reporter, CombineAvroInputFormat.class);
     }
 
-    private static class CombineAvroInputFormat extends CombineFileRecordReaderWrapper<Text, Text> {
+    private class CombineAvroInputFormat extends CombineFileRecordReaderWrapper<Text, Text> {
         public CombineAvroInputFormat(CombineFileSplit split, Configuration conf, Reporter reporter, Integer idx) throws IOException {
             super(new AvroAsTextInputFormat(), split, conf, reporter, idx);
         }
