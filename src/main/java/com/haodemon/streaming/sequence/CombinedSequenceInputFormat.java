@@ -17,7 +17,7 @@ public class CombinedSequenceInputFormat extends CombineFileInputFormat<Text, Te
         return new CombineFileRecordReader(jobConf, (CombineFileSplit)inputSplit, reporter, CombineSequenceInputFormat.class);
     }
 
-    private class CombineSequenceInputFormat extends CombineFileRecordReaderWrapper<Text, Text> {
+    private static class CombineSequenceInputFormat extends CombineFileRecordReaderWrapper<Text, Text> {
         public CombineSequenceInputFormat(CombineFileSplit split, Configuration conf, Reporter reporter, Integer idx) throws IOException {
             super(new SequenceFileAsTextInputFormat(), split, conf, reporter, idx);
         }
