@@ -1,4 +1,4 @@
-# HadoopStreaming
+## HadoopStreaming
 Set of Input Formats for Hadoop Streaming.
 
 These classes specifically designed to allow you to pass __a lot of small__ files into hadoop streaming.</br>
